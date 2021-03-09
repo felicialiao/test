@@ -133,7 +133,18 @@ var xmlhttp;
    
    
    
-FB.getLoginStatus(function(response) {
+async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v10.0&appId=242755040858106&autoLogAppEvents=1" nonce="F6y8hfyA">
+
+
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
-});
+  });
+}
 /* 測試 FB 登入 API */
